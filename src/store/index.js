@@ -1,4 +1,4 @@
 import { createStore } from "redux";
 import commentReducer from "../reducers";
 
-export const store = createStore(commentReducer, {});
+export const store = initialState => createStore(commentReducer, initialState);
