@@ -16,4 +16,12 @@ beforeEach(() => {
   );
 });
 
-it("should have one LI per comment", () => {});
+it("should have one LI per comment", () => {
+  expect(wrapper.find("li").length).toEqual(comments.length);
+});
+
+it("shows the text of each comment", () => {
+  comments.forEach(comment =>
+    expect(wrapper.render().text()).toContain(comment)
+  );
+});

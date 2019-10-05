@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { saveComment } from "../actions/commentActions";
+import { saveComment, fetchComments } from "../actions/commentActions";
 
-const CommentBox = ({ saveComment }) => {
+const CommentBox = ({ saveComment, fetchComments }) => {
   const [comment, setComment] = useState("");
 
   const handleChange = e => {
     setComment(e.target.value);
+  };
+
+  const onClick = e => {
+    fetchComments();
   };
 
   const onCommentSubmit = e => {
@@ -18,17 +22,20 @@ const CommentBox = ({ saveComment }) => {
   };
 
   return (
-    <form onSubmit={onCommentSubmit}>
-      <h1>Enter a Comment</h1>
-      <textarea onChange={handleChange} value={comment} />
-      <div>
-        <button>Submit Comment</button>
-      </div>
-    </form>
+    <div>
+      <form onSubmit={onCommentSubmit}>
+        <h1>Enter a Comment</h1>
+        <textarea onChange={handleChange} value={comment} />
+        <div>
+          <button>Submit Comment</button>
+        </div>
+      </form>
+      <button onClick={onClick}>Fetch Comments</button>
+    </div>
   );
 };
 
 export default connect(
   null,
-  { saveComment }
+  { saveComment, fetchComments }
 )(CommentBox);

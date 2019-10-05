@@ -1,6 +1,5 @@
-import React from "react";
 import commentReducer from "../commentReducer";
-import { SAVE_COMMENT } from "../../actions/types";
+import { SAVE_COMMENT, FETCH_COMMENTS } from "../../actions/types";
 
 it("should update the state on SAVE_COMMENT action", () => {
   let comment = "New Comment";
