@@ -1,4 +1,4 @@
-import { saveComment } from "../index";
+import { saveComment } from "../commentActions";
 import { SAVE_COMMENT } from "../types";
 
 describe("saveComment action", () => {
