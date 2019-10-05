@@ -30,7 +30,9 @@ const CommentBox = ({ saveComment, fetchComments }) => {
           <button>Submit Comment</button>
         </div>
       </form>
-      <button onClick={onClick}>Fetch Comments</button>
+      <button className="fetch-comments" onClick={onClick}>
+        Fetch Comments
+      </button>
     </div>
   );
 };
